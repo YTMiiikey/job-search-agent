@@ -18,7 +18,7 @@ browse / scrape → score → draft → submit → follow-up
 
 | Step | What happens |
 |------|-------------|
-| **Capture** | Install the Chrome extension once. As you browse job postings on LinkedIn, company sites, or anywhere else, click the extension to save them. **On LinkedIn: open the full post in its own tab and wait for the description to load before clicking Save.** The pipeline also auto-scrapes company ATS boards (Greenhouse/Lever/Ashby) in bulk. |
+| **Capture** | Install the Chrome extension once. Open job postings in tabs as you browse — LinkedIn, company sites, anywhere. When ready, click the extension button once to capture **all open job tabs simultaneously**. The pipeline also auto-scrapes company ATS boards (Greenhouse/Lever/Ashby) in bulk. |
 | **Score** | Each posting is sent to Claude AI with your background summary; it assigns a 1–9 fit score and a brief rationale, saved to a local database |
 | **Draft** | For jobs worth applying to, Claude generates a tailored resume summary and cover letter; pandoc converts them to DOCX and PDF |
 | **Submit** | Records your submissions with platform, notes, and a follow-up date |
@@ -228,14 +228,16 @@ python3 scripts/scrape_ats.py
 The extension is the fastest way to capture jobs since it works on **any website** —
 LinkedIn, company career pages, job boards, anywhere.
 
-### Capturing a job
+### Capturing jobs
 
-1. Navigate to a job posting in Chrome
-2. Click the **Job Scraper** icon in your toolbar
-3. The extension reads the page title, company, location, and full description
-4. Click **"Save Job"** — it appends to `jobs_scraped.json` in your Downloads folder
+The extension captures **all open job tabs at once** — so the recommended workflow
+is to open several job postings into tabs first, then click the button once to batch-capture them.
 
-You can capture many jobs in one browsing session — each click appends to the same file.
+1. Open job postings in Chrome tabs as you browse (one tab per job)
+2. When you have a batch ready, click the **Job Scraper** icon in your toolbar
+3. The extension automatically scrolls each tab, expands "See more" sections, waits
+   up to 4 seconds for content to render, and reads the title, company, location, and description
+4. All captured jobs are saved to `jobs_scraped.json` in your Downloads folder
 
 ### Importing captured jobs
 
@@ -256,19 +258,17 @@ python3 scripts/score_auto.py
 
 ### Tips for capturing jobs effectively
 
-- **Don't filter yourself** while browsing — capture anything that looks plausible.
-  Let the AI scoring (step 2) decide what's worth pursuing. A job that seems like a stretch
-  might score higher than expected once the model reads the full description.
-- **Capture the full job page**, not a search results page. Navigate into the actual
-  posting so the extension can read the complete description.
-- **LinkedIn: always open the full post and wait for it to render before clicking Save.**
-  LinkedIn loads job descriptions asynchronously — if you click the extension too quickly,
-  it may capture an empty or partial description. The steps:
-  1. Click the job title to open it (in a new tab, not the side panel)
-  2. Wait for the full description to appear on screen — scroll down to confirm it has loaded
-  3. *Then* click the extension icon and Save
-- The extension works on any page — if a job page looks like it captured incomplete text,
-  reload the page, let it fully render, and capture again.
+- **Don't filter yourself** while browsing — open anything that looks plausible into a tab.
+  Let the AI scoring step decide what's worth pursuing; a stretch role might score higher
+  than expected once the model reads the full description.
+- **Open the actual job page in its own tab**, not a search results page or side panel.
+  The extension needs the individual posting page to extract the full description.
+- **LinkedIn**: click the job title to open it in a new tab (not the LinkedIn side panel).
+  The extension handles scrolling and expanding the description automatically — you just
+  need the page itself to be open in a tab before clicking the extension button.
+- If a job's description looks incomplete after importing, open the posting page again,
+  let it load fully, then re-capture (the extension polls for up to 4 seconds, but very
+  slow connections may need a manual reload first).
 
 ---
 
