@@ -18,7 +18,7 @@ browse / scrape → score → draft → submit → follow-up
 
 | Step | What happens |
 |------|-------------|
-| **Capture** | Install the Chrome extension once. As you browse job postings on LinkedIn, company sites, or anywhere else, click the extension to save them. The pipeline also auto-scrapes company ATS boards (Greenhouse/Lever/Ashby) in bulk. |
+| **Capture** | Install the Chrome extension once. As you browse job postings on LinkedIn, company sites, or anywhere else, click the extension to save them. **On LinkedIn: open the full post in its own tab and wait for the description to load before clicking Save.** The pipeline also auto-scrapes company ATS boards (Greenhouse/Lever/Ashby) in bulk. |
 | **Score** | Each posting is sent to Claude AI with your background summary; it assigns a 1–9 fit score and a brief rationale, saved to a local database |
 | **Draft** | For jobs worth applying to, Claude generates a tailored resume summary and cover letter; pandoc converts them to DOCX and PDF |
 | **Submit** | Records your submissions with platform, notes, and a follow-up date |
