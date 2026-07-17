@@ -86,7 +86,7 @@ Otherwise, follow the manual setup steps below.
    Claude Code via an API key (not a subscription), that same key works here automatically.
    Costs a few cents per application (see [Cost estimate](#cost-estimate)).
 4. **Google Chrome** — for the job-capture extension
-5. **Two resume DOCX files** — your resume in Word format, used for styling. See Step 5.
+5. **One or two resume DOCX files** — your resume in Word format, used for styling only. See Step 6.
 
 ---
 
@@ -172,13 +172,27 @@ content. The file has detailed comments throughout. Key parts:
 
 ### Step 6 — Add your resume template files
 
-The pipeline needs two DOCX files in the project root for formatting (fonts, margins):
+The pipeline supports up to two DOCX resume templates, used for formatting only
+(fonts, margins, heading styles — content is always regenerated from your `draft_all.py`).
+What the two variants represent is entirely up to you:
 
-- `reference_resume_comp.docx` — your resume with technical skills listed first
-- `referece_resume_exp.docx` — same but with hands-on/experimental skills first
-  *(note: the typo in the second filename is intentional — the code expects it)*
+- Technical-first vs. hands-on-first ordering
+- Industry vs. academic framing
+- Different section order for different role types
+- Or just one resume — if you only have one version, copy it with both filenames
 
-If you only have one resume file, copy it with both names. If starting from scratch:
+Place your DOCX files in the project root, then set their filenames in `user_profile.yaml`:
+
+```yaml
+template_comp: "my_resume_a.docx"   # primary template
+template_exp:  "my_resume_b.docx"   # alternate template (optional)
+```
+
+If you only have one resume version, set both fields to the same filename.
+If you omit these fields, the defaults are `reference_resume_comp.docx` and
+`referece_resume_exp.docx` (the second has an intentional typo — legacy filename).
+
+If you don't have a DOCX yet, generate a minimal template:
 ```bash
 python3 scripts/build_reference_docx.py
 ```
@@ -373,8 +387,8 @@ job-search-agent/
 ├── user_profile.yaml          # YOUR profile — gitignored
 ├── user_profile.example.yaml  # template to copy and fill in
 ├── draft_all.example.py       # resume section skeleton to copy and customize
-├── reference_resume_comp.docx # YOUR formatting template (gitignored)
-├── referece_resume_exp.docx   # YOUR formatting template (gitignored)
+├── reference_resume_comp.docx # YOUR primary formatting template (gitignored)
+├── referece_resume_exp.docx   # YOUR alternate formatting template (gitignored, optional)
 └── requirements.txt
 ```
 

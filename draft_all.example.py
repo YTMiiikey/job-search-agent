@@ -9,10 +9,12 @@ SETUP:
   1. Copy this file:  cp draft_all.example.py scripts/draft_all.py
   2. Replace all placeholder content with your own resume text.
   3. Add or remove sections to match your background.
-  4. Provide two reference DOCX templates in the project root:
-       reference_resume_comp.docx  (primary template — lead with your computational/technical skills)
-       referece_resume_exp.docx    (alternate template — lead with your experimental/hands-on skills)
-     These are used only for formatting; pandoc rebuilds content from the markdown sections below.
+  4. Provide one or two reference DOCX templates in the project root:
+       reference_resume_comp.docx  (primary template — used when template = "comp")
+       referece_resume_exp.docx    (alternate template — used when template = "exp", optional)
+     What the two variants represent is up to you: different skill orderings, industry vs.
+     academic framing, or anything else. If you only have one resume, copy it with both names.
+     These files control formatting only; content is rebuilt from the sections below each time.
 """
 
 import subprocess

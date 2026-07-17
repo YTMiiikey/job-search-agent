@@ -20,9 +20,22 @@ from docx.oxml import OxmlElement
 from docx.opc.constants import RELATIONSHIP_TYPE as RT
 
 ROOT = Path(__file__).resolve().parent.parent
-TEMPLATE     = ROOT / "reference_resume.docx"
-TEMPLATE_COMP = ROOT / "reference_resume_comp.docx"
-TEMPLATE_EXP  = ROOT / "referece_resume_exp.docx"   # note: typo in filename is intentional
+
+def _template_paths():
+    try:
+        import sys
+        sys.path.insert(0, str(ROOT / "scripts"))
+        from config import load_profile
+        p = load_profile()
+        comp = p.get("template_comp") or "reference_resume_comp.docx"
+        exp  = p.get("template_exp")  or "referece_resume_exp.docx"
+        return ROOT / comp, ROOT / exp
+    except Exception:
+        return (ROOT / "reference_resume_comp.docx",
+                ROOT / "referece_resume_exp.docx")
+
+TEMPLATE      = ROOT / "reference_resume.docx"
+TEMPLATE_COMP, TEMPLATE_EXP = _template_paths()
 
 # ── Template loading & index detection ───────────────────────────────────────
 

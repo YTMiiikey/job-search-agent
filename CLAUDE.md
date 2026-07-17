@@ -149,12 +149,15 @@ verifiable source bullet in the candidate's actual experience.
 
 ## Two resume templates
 
-| Template | File | Skills order | When to use |
-|----------|------|-------------|-------------|
-| COMP | `reference_resume_comp.docx` | Technical/computational first | Technical/ML-heavy JDs |
-| EXP | `referece_resume_exp.docx` | Experimental/hands-on first | Lab/experimental-heavy JDs |
+The pipeline supports a primary (`comp`) and alternate (`exp`) DOCX template. What those
+two variants represent is up to the user — different skill orderings, industry vs. academic
+framing, etc. If the user only has one resume version, both template keys point to the same file.
 
-`draft.py` selects automatically. Override by editing the `template` field in the result dict.
+Filenames are set in `user_profile.yaml` under `template_comp` / `template_exp`.
+Both files live in the project root.
+
+`draft.py` selects between them automatically based on the LLM's `"template"` output.
+Override by editing the `template` field in the result dict.
 
 ---
 

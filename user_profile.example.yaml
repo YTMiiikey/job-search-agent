@@ -25,6 +25,16 @@ scholar: ""   # leave blank if not applicable
 # Native Linux/Mac: "/home/youruser/Downloads" or "/Users/youruser/Downloads"
 windows_downloads: "/mnt/c/Users/YourWindowsName/Downloads"
 
+# ── Resume template filenames (optional) ─────────────────────────────────
+# Name your DOCX template files whatever you want and set the filenames here.
+# Both files go in the project root. The "comp" template is used for more
+# technical/computational JDs; the "exp" template for more hands-on JDs —
+# but what those two variants mean is entirely up to you. If you only have
+# one resume, set both to the same filename.
+# Omit these fields to use the defaults shown below.
+template_comp: "resume_template_a.docx"
+template_exp:  "resume_template_b.docx"
+
 # ── LLM scoring profile (score_auto.py) ─────────────────────────────────
 # Sent to Claude with every job posting to score fit on a 1-9 scale.
 # Be specific: current role, education, key skills, and honest about gaps.
