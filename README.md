@@ -26,6 +26,11 @@ browse / scrape → score → draft → submit → follow-up
 
 All generated files stay on your machine. The only external calls are to the Anthropic API for scoring and drafting.
 
+> **Always proofread generated materials before submitting.** AI can hallucinate skills,
+> misattribute outcomes, or blend facts from different projects in plausible-sounding ways.
+> The built-in validator (`validate.py`) catches patterns you explicitly define, but it is
+> not a substitute for reading every resume and cover letter yourself.
+
 ---
 
 ## Quickest way to get started (Claude Code)
@@ -308,8 +313,13 @@ python3 scripts/draft.py 42
 python3 scripts/draft.py 42 43 44          # batch
 python3 scripts/draft.py 42 --force        # overwrite an existing draft
 
-# Validate generated files for accuracy
+# Validate generated files for common accuracy issues
 python3 scripts/validate.py
+
+# !! Always proofread before submitting !!
+# AI-generated content can hallucinate skills, misattribute outcomes, or blend
+# facts from different projects. Read every resume and cover letter yourself
+# before sending — validate.py catches known patterns but is not exhaustive.
 
 # Record a submission
 python3 scripts/submit.py 42 --platform "Greenhouse" --notes "referral from Jane"
