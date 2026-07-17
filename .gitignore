@@ -1,0 +1,38 @@
+# ── Personal / private files — never commit these ─────────────────────────
+
+# Your name, contact info, career profile, accuracy rules
+user_profile.yaml
+
+# Your personal Claude Code instructions (full version)
+CLAUDE.personal.md
+
+# Your actual resume content (see draft_all.example.py)
+scripts/draft_all.py
+
+# Application folders (your drafted/submitted materials)
+applications/*
+!applications/.gitkeep
+
+# Reference resume DOCX templates and generated outputs
+*.docx
+*.pdf
+
+# Database and scraped job data
+data/jobs.db
+data/*.json
+
+# OAuth credentials (if re-added in future)
+credentials/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.env

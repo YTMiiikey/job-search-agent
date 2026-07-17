@@ -1,0 +1,501 @@
+# Target companies for protein engineering / computational biology roles.
+#
+# ats: greenhouse | lever | ashby | manual
+#   greenhouse -> https://boards-api.greenhouse.io/v1/boards/{board_token}/jobs
+#   lever      -> https://api.lever.co/v0/postings/{board_token}?mode=json
+#   ashby      -> https://api.ashbyhq.com/posting-api/job-board/{board_token}
+#   manual     -> no public ATS API found; check careers_url by hand
+
+companies:
+  - name: Ginkgo Bioworks
+    careers_url: https://www.ginkgobioworks.com/careers
+    ats: greenhouse
+    board_token: ginkgobioworks
+
+  - name: Generate Biomedicines
+    careers_url: https://generatebiomedicines.com/careers
+    ats: greenhouse
+    board_token: generatebiomedicines
+
+  - name: Absci
+    careers_url: https://www.absci.com/careers
+    ats: greenhouse
+    board_token: absci
+
+  - name: Profluent Bio
+    careers_url: https://www.profluent.bio/careers
+    ats: greenhouse
+    board_token: profluent
+
+  - name: EvolutionaryScale
+    careers_url: https://www.evolutionaryscale.ai/careers
+    ats: greenhouse
+    board_token: evolutionaryscale
+
+  - name: Form Bio
+    careers_url: https://www.formbio.com/careers
+    ats: greenhouse
+    board_token: formbio
+
+  - name: Dyno Therapeutics
+    careers_url: https://www.dynotx.com/careers
+    ats: greenhouse
+    board_token: dynotherapeutics
+
+  - name: Recursion Pharmaceuticals
+    careers_url: https://www.recursion.com/careers
+    ats: greenhouse
+    board_token: recursionpharmaceuticals
+
+  - name: Tessera Therapeutics
+    careers_url: https://www.tesseratherapeutics.com/careers
+    ats: greenhouse
+    board_token: tesseratherapeutics
+
+  - name: Caribou Biosciences
+    careers_url: https://www.cariboubio.com/careers
+    ats: greenhouse
+    board_token: caribou
+
+  - name: Tune Therapeutics
+    careers_url: https://www.tunetx.com/careers
+    ats: greenhouse
+    board_token: tunetherapeutics
+
+  - name: Pairwise
+    careers_url: https://www.pairwise.com/careers
+    ats: greenhouse
+    board_token: pairwise
+
+  - name: Vilya
+    careers_url: https://www.vilya.com/careers
+    ats: greenhouse
+    board_token: vilya
+
+  - name: Outpace Bio
+    careers_url: https://www.outpacebio.com/careers
+    ats: lever
+    board_token: outpacebio
+
+  - name: Asimov
+    careers_url: https://www.asimov.com/careers
+    ats: ashby
+    board_token: asimov
+
+  - name: Basecamp Research
+    careers_url: https://www.basecamp-research.com/careers
+    ats: ashby
+    board_token: basecamp-research
+
+  - name: Nabla Bio
+    careers_url: https://www.nablabio.com/careers
+    ats: ashby
+    board_token: nabla
+
+  - name: Latent Labs
+    careers_url: https://www.latentlabs.com/careers
+    ats: ashby
+    board_token: latentlabs
+
+  - name: Arcadia Science
+    careers_url: https://www.arcadiascience.com/careers
+    ats: greenhouse
+    board_token: arcadiascience
+
+  - name: Prime Medicine
+    careers_url: https://primemedicine.com/careers
+    ats: greenhouse
+    board_token: primemedicine
+
+  - name: Altos Labs
+    careers_url: https://altoslabs.com/careers
+    ats: greenhouse
+    board_token: altoslabs
+
+  - name: Arc Institute
+    careers_url: https://arcinstitute.org/careers
+    ats: greenhouse
+    board_token: arcinstitute
+
+  - name: Insitro
+    careers_url: https://insitro.com/careers
+    ats: ashby
+    board_token: insitro
+
+  - name: Cradle Bio
+    careers_url: https://www.cradle.bio/careers
+    ats: ashby
+    board_token: cradlebio
+
+  - name: Isomorphic Labs
+    careers_url: https://www.isomorphiclabs.com/careers
+    ats: greenhouse
+    board_token: isomorphiclabs
+
+  - name: Chai Discovery
+    careers_url: https://www.chaidiscovery.com/careers
+    ats: ashby
+    board_token: chaidiscovery
+
+  - name: Anthropic
+    careers_url: https://www.anthropic.com/careers
+    ats: greenhouse
+    board_token: anthropic
+
+  - name: Lila Sciences
+    careers_url: https://www.lilasciences.com/careers
+    ats: greenhouse
+    board_token: lilasciences
+
+  - name: Earli
+    careers_url: https://www.earli.com/careers
+    ats: greenhouse
+    board_token: earli
+
+  - name: Alnylam Pharmaceuticals
+    careers_url: https://www.alnylam.com/careers
+    ats: greenhouse
+    board_token: alnylampharmaceuticals
+
+  - name: Integrated Biosciences
+    careers_url: https://www.integratedbiosciences.com/careers
+    ats: greenhouse
+    board_token: integratedbiosciencesinc
+
+  - name: Dovetail Therapeutics
+    careers_url: https://www.dovetatl.com/careers
+    ats: ashby
+    board_token: dovetail
+
+  - name: Tamarind Bio
+    careers_url: https://www.tamarind.bio/careers
+    ats: ashby
+    board_token: tamarindbio
+
+  # --- No public ATS API found; check these manually ---
+  - name: Adimab
+    careers_url: https://www.adimab.com/careers
+    ats: manual
+
+  - name: Amgen
+    careers_url: https://careers.amgen.com
+    ats: manual
+
+  - name: Arrowhead Pharmaceuticals
+    careers_url: https://www.arrowheadpharma.com/about/careers
+    ats: manual
+
+  - name: Calico Life Sciences
+    careers_url: https://www.calicolabs.com/careers
+    ats: manual
+
+  - name: Gilead Sciences
+    careers_url: https://gilead.com/careers
+    ats: manual
+
+  - name: Manifold Bio
+    careers_url: https://www.manifoldbio.com/careers
+    ats: manual
+
+  - name: Merck
+    careers_url: https://jobs.merck.com
+    ats: manual
+
+  - name: Moderna
+    careers_url: https://www.modernatx.com/careers
+    ats: manual
+
+  - name: Pfizer
+    careers_url: https://www.pfizer.com/about/careers
+    ats: manual
+
+  - name: Regeneron
+    careers_url: https://careers.regeneron.com
+    ats: manual
+
+  - name: Sanofi
+    careers_url: https://www.sanofi.com/en/careers
+    ats: manual
+
+  - name: SystImmune
+    careers_url: https://www.systimmune.com/careers
+    ats: manual
+
+  - name: Takeda
+    careers_url: https://www.takeda.com/careers
+    ats: manual
+
+  - name: Tempus AI
+    careers_url: https://www.tempus.com/careers
+    ats: manual
+
+  - name: Convergent Research
+    careers_url: https://www.convergentresearch.org/careers
+    ats: manual
+
+  - name: Cascade Bio
+    careers_url: https://www.cascadebio.com/careers
+    ats: manual
+
+  - name: Xaira Therapeutics
+    careers_url: https://www.xaira.com/careers
+    ats: manual
+
+  - name: GenBio AI
+    careers_url: https://www.genbio.ai/careers
+    ats: manual
+
+  - name: Arzeda
+    careers_url: https://www.arzeda.com/careers
+    ats: manual
+
+  - name: Inscripta
+    careers_url: https://www.inscripta.com/careers
+    ats: manual
+
+  - name: Codexis
+    careers_url: https://www.codexis.com/careers
+    ats: manual
+
+  - name: Genesis Therapeutics
+    careers_url: https://www.genesistherapeutics.ai/careers
+    ats: manual
+
+  - name: Iambic Therapeutics
+    careers_url: https://www.iambic.ai/careers
+    ats: manual
+
+  - name: BigHat Biosciences
+    careers_url: https://www.bighatbio.com/careers
+    ats: manual
+
+  - name: Metagenomi
+    careers_url: https://metagenomi.co/careers
+    ats: manual
+
+  - name: Mammoth Biosciences
+    careers_url: https://mammothbiosci.com/careers
+    ats: manual
+
+  - name: Scribe Therapeutics
+    careers_url: https://www.scribetx.com/careers
+    ats: manual
+
+  - name: Arbor Biotechnologies
+    careers_url: https://www.arbor.bio/careers
+    ats: manual
+
+  - name: Beam Therapeutics
+    careers_url: https://beamtx.com/careers
+    ats: manual
+
+  - name: Cusp AI
+    careers_url: https://www.cusp.ai/careers
+    ats: manual
+
+  - name: AbbVie
+    careers_url: https://www.abbvie.com/join-us.html
+    ats: manual
+
+  - name: AstraZeneca
+    careers_url: https://careers.astrazeneca.com
+    ats: manual
+
+  - name: Biocytogen
+    careers_url: https://biocytogen.com/career
+    ats: manual
+
+  - name: Boehringer Ingelheim
+    careers_url: https://www.boehringer-ingelheim.com/us/careers
+    ats: manual
+
+  - name: Bristol Myers Squibb
+    careers_url: https://careers.bms.com
+    ats: manual
+
+  - name: Bruker
+    careers_url: https://www.bruker.com/en/about-bruker/careers.html
+    ats: manual
+
+  - name: Eli Lilly and Company
+    careers_url: https://careers.lilly.com
+    ats: manual
+
+  - name: Ellison Medical Institute
+    careers_url: https://www.emila.org/careers
+    ats: manual
+
+  - name: Equator Therapeutics
+    careers_url: https://equatortherapeutics.com/careers
+    ats: manual
+
+  - name: Flagship Pioneering
+    careers_url: https://www.flagshippioneering.com/join/roles
+    ats: greenhouse
+    board_token: flagshippioneeringinc
+
+  - name: Genentech
+    careers_url: https://www.gene.com/careers
+    ats: manual
+
+  - name: GondolaBio
+    careers_url: https://recruiting.paylocity.com/recruiting/jobs/All/d887949e-3f67-43b9-9f6b-3371b3f9450e/GondolaBio-Service-Co-Inc
+    ats: manual
+
+  - name: GRAIL
+    careers_url: https://grail.com/careers
+    ats: manual
+
+  - name: Helix BioStructures
+    careers_url: https://www.helixbiostructures.com/careers
+    ats: manual
+
+  - name: Merge Labs
+    careers_url: https://jobs.ashbyhq.com/Merge%20Labs
+    ats: ashby
+    board_token: Merge Labs
+
+  - name: Meso Scale Diagnostics
+    careers_url: https://www.mesoscale.com/en/careers
+    ats: manual
+
+  - name: Moonwalk Biosciences
+    careers_url: https://app.trinethire.com/companies/92468-moonwalk-biosciences-inc/jobs/100221-general-interest
+    ats: manual
+
+  - name: Neion Bio
+    careers_url: https://apply.workable.com/neion-bio/
+    ats: manual
+
+  - name: Neurona Therapeutics
+    careers_url: https://neuronatherapeutics.com/careers
+    ats: manual
+
+  - name: OpenEye Scientific (Cadence)
+    careers_url: https://www.eyesopen.com/careers
+    ats: manual
+
+  - name: Parabilis Medicines
+    careers_url: https://www.parabilismed.com/careers
+    ats: manual
+
+  - name: Prellis Biologics
+    careers_url: https://www.prellisbio.com/careers
+    ats: manual
+
+  - name: QLSF Biotherapeutics
+    careers_url: https://www.qlsfbio.com/careers
+    ats: manual
+
+  - name: Raven Healthcare Incubator (RA Capital)
+    careers_url: https://www.racap.com/careers
+    ats: manual
+
+  - name: Regor Therapeutics Group
+    careers_url: https://regor.com/careers/
+    ats: manual
+
+  - name: Roche
+    careers_url: https://careers.roche.com
+    ats: manual
+
+  - name: SandboxAQ
+    careers_url: https://www.sandboxaq.com/careers
+    ats: manual
+
+  - name: Serif Biomedicines (Flagship Pioneering)
+    careers_url: https://job-boards.greenhouse.io/serif
+    ats: greenhouse
+    board_token: serif
+
+  - name: Superluminal Medicines
+    careers_url: https://job-boards.greenhouse.io/superluminalrx
+    ats: greenhouse
+    board_token: superluminalrx
+
+  - name: Twist Bioscience
+    careers_url: https://www.twistbioscience.com/careers
+    ats: manual
+
+# Keywords used to filter postings (case-insensitive, matched against
+# job title and description).
+keywords:
+  - protein engineer
+  - protein engineering
+  - protein design
+  - computational biology
+  - computational biologist
+  - directed evolution
+  - machine learning scientist
+  - ML scientist
+  - protein language model
+  - structural biology
+  - synthetic biology
+  - bioinformatics scientist
+
+# Title-only filter: at least one of these must appear in the job *title*
+# (case-insensitive). Prevents broad-keyword matches (e.g. "ML" in the
+# description) from pulling in off-target roles like SEM/TEM Engineer or
+# Condensed Matter Physicist at companies with diverse research orgs.
+title_keywords:
+  - protein
+  - computational
+  - machine learning
+  - ml scientist
+  - research scientist
+  - research engineer
+  - directed evolution
+  - bioinformatics
+  - synthetic biology
+  - antibody
+  - genomics
+  - gene therapy
+  - structural biolog
+  - foundation model
+  - ai scientist
+  - ai/ml
+
+# Postings whose location field contains any of these strings (case-insensitive)
+# are flagged with status='exclude_location' and skipped. Keeps the job list
+# to US-only opportunities.
+exclude_locations:
+  - London
+  - United Kingdom
+  - " UK"
+  - Amsterdam
+  - Netherlands
+  - Zurich
+  - Switzerland
+  - Lausanne
+  - Cambridge, UK
+  - Toronto
+  - Canada
+
+# Postings whose description contains any of these phrases (case-insensitive)
+# are flagged with status='exclude_sponsorship' instead of 'new', since they
+# indicate the role won't sponsor a visa (relevant for H1B holders).
+exclude_keywords:
+  - must be a u.s. citizen
+  - u.s. citizenship required
+  - us citizenship required
+  - united states citizen
+  - must be a us citizen
+  - permanent resident
+  - green card holder
+  - green card required
+  - lawful permanent resident
+  - no visa sponsorship
+  - not provide visa sponsorship
+  - does not sponsor
+  - unable to sponsor
+  - will not sponsor
+  - cannot sponsor
+  - sponsorship is not available
+  - sponsorship will not be provided
+  - not eligible for visa sponsorship
+  - is not available for this role now or in the future
+  - security clearance
+  - active clearance
+  - able to obtain a security clearance
+  - itar
+  - export control regulations

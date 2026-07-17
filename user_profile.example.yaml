@@ -1,0 +1,83 @@
+# ── job-search-agent: user profile template ──────────────────────────────
+#
+# Copy this file to user_profile.yaml and fill in YOUR details.
+# user_profile.yaml is gitignored and never committed to the repo.
+#
+# Three scripts read from this file at runtime:
+#   score_auto.py  → scoring_profile
+#   draft.py       → draft_profile, name/email/phone/location
+#   validate.py    → disallowed_patterns
+#   import_scraped_jobs.py → windows_downloads
+# ──────────────────────────────────────────────────────────────────────────
+
+# ── Identity ──────────────────────────────────────────────────────────────
+name: "Jane Smith"
+email: "jane@example.com"
+phone: "+1 555-000-0000"
+location: "San Francisco, CA 94102"
+linkedin: "https://www.linkedin.com/in/your-profile/"
+github: "https://github.com/your-handle"
+scholar: ""   # leave blank if not applicable
+
+# ── Platform paths ────────────────────────────────────────────────────────
+# Path where Chrome saves the jobs_scraped.json file from the extension.
+# WSL users: "/mnt/c/Users/YourWindowsUsername/Downloads"
+# Native Linux/Mac: "/home/youruser/Downloads" or "/Users/youruser/Downloads"
+windows_downloads: "/mnt/c/Users/YourWindowsName/Downloads"
+
+# ── LLM scoring profile (score_auto.py) ─────────────────────────────────
+# Sent to Claude with every job posting to score fit on a 1-9 scale.
+# Be specific: current role, education, key skills, and honest about gaps.
+# Gaps let the model calibrate whether a stretch role is worth applying to.
+scoring_profile: |
+  Jane Smith — Senior Scientist, Protein Engineering at AcmeBio (Jan 2022–present)
+  PhD in Biochemistry, MIT (2017–2022).
+
+  Core strengths:
+  - [List your strongest, most relevant skills — be specific about tools/methods]
+  - Example: Computational protein design using RFDiffusion, ProteinMPNN, AlphaFold2
+  - Example: Wet-lab directed evolution: deep mutational scanning, FACS-based selection
+  - Example: Python (PyTorch, pandas), AWS GPU pipelines, NGS analysis
+
+  Skill gaps (acknowledged):
+  - [List areas where you're weaker — honest assessment leads to better scoring]
+  - Example: Limited IgG/bispecific antibody engineering experience
+  - Example: No Rosetta/PyRosetta experience
+
+# ── LLM drafting profile (draft.py) ─────────────────────────────────────
+# More detailed profile sent to Claude when writing tailored resumes and
+# cover letters. Add explicit accuracy rules here — things the model must
+# never fabricate, even if they would "sound good" in context.
+draft_profile: |
+  Jane Smith | Senior Scientist, Protein Engineering @ AcmeBio (Jan 2022–present)
+  PhD Biochemistry, MIT (2017–2022)
+
+  Core strengths (use all that are relevant; do NOT invent others):
+  - [Repeat your key skills here in the same specific format]
+
+  CRITICAL accuracy rules:
+  - [Add any hard constraints — tools you've never used, methods you didn't apply]
+  - Example: NEVER claim phage display experience — only FACS-based selection was used
+  - Example: NEVER claim SPR kinetics — only cell-based binding assays were performed
+
+# ── Content accuracy constraints (validate.py) ───────────────────────────
+# Python regexes matched case-insensitively against resume.md and cover_letter.md.
+# The validator will raise an error if any pattern matches, preventing submission
+# of application materials with fabricated claims.
+#
+# Use these for:
+#   - Tools/methods you have NEVER used (so the LLM can't accidentally include them)
+#   - Cross-contamination catches (e.g., a hit-rate stat from Project A appearing
+#     attributed to Project B)
+#   - Broken phrases from find-replace operations
+#
+# Pattern syntax: standard Python re module regex strings.
+# Leave as empty list [] if you don't want any custom validation.
+disallowed_patterns:
+  - pattern: "PhageDisplay"
+    message: "Has not performed phage display — remove"
+  - pattern: "SPR[^.]{0,60}(?:binding|affinity|kinetics)"
+    message: "SPR not used for binding characterization — only cell-based assays"
+  # Add your own constraints below:
+  # - pattern: "SomeToolName"
+  #   message: "Has never used SomeToolName"
