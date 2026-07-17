@@ -78,7 +78,13 @@ Otherwise, follow the manual setup steps below.
    - Mac: `brew install pandoc`
    - Linux/WSL: `sudo apt install pandoc`
    - Windows: download from [pandoc.org/installing.html](https://pandoc.org/installing.html)
-3. **An Anthropic API key** — used for scoring and drafting. Sign up at [console.anthropic.com](https://console.anthropic.com/). Costs a few cents per application (see [Cost estimate](#cost-estimate) below).
+3. **An Anthropic API key** — used by the scoring and drafting scripts (`score_auto.py`, `draft.py`).
+   Note: this is separate from a Claude Code subscription. Claude Code (the CLI) uses your
+   Claude.ai subscription and does not require an API key — but the pipeline scripts call
+   the Anthropic Python SDK directly and need `ANTHROPIC_API_KEY` set in your environment.
+   Get one at [console.anthropic.com](https://console.anthropic.com/). If you already run
+   Claude Code via an API key (not a subscription), that same key works here automatically.
+   Costs a few cents per application (see [Cost estimate](#cost-estimate)).
 4. **Google Chrome** — for the job-capture extension
 5. **Two resume DOCX files** — your resume in Word format, used for styling. See Step 5.
 
@@ -98,6 +104,12 @@ If `pip` isn't found, try `pip3`. If you get permission errors, add `--user`.
 
 ### Step 2 — Set your Anthropic API key
 
+The pipeline's scoring and drafting scripts use the Anthropic Python SDK, which reads
+`ANTHROPIC_API_KEY` from your environment. This is **separate from Claude Code** — even
+if you use Claude Code via a Claude.ai subscription, the scripts still need their own key.
+
+Get a key at [console.anthropic.com](https://console.anthropic.com/), then:
+
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...
 ```
@@ -105,6 +117,10 @@ export ANTHROPIC_API_KEY=sk-ant-...
 To make this permanent (so you don't need to set it every session):
 - **bash**: `echo 'export ANTHROPIC_API_KEY=sk-ant-...' >> ~/.bashrc`
 - **zsh**: `echo 'export ANTHROPIC_API_KEY=sk-ant-...' >> ~/.zshrc`
+
+> **Already using Claude Code with an API key?** If you launched Claude Code with
+> `ANTHROPIC_API_KEY` set (rather than through a Claude.ai subscription), that same
+> key is picked up automatically — no extra step needed.
 
 ### Step 3 — Install the Chrome extension
 
