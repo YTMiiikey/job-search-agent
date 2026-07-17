@@ -28,15 +28,41 @@ All generated files stay on your machine. The only external calls are to the Ant
 
 ---
 
-## Quickest way to get started
+## Quickest way to get started (Claude Code)
 
-If you use Claude Code (Claude's CLI), clone the repo, open it, and ask:
+If you use [Claude Code](https://claude.ai/code) (Anthropic's CLI), clone the repo,
+open it in your terminal, and try one of these prompts:
 
-> "Help me set up this project"
+**First-time setup**
+```
+Help me set up this project. I'm a computational biologist with experience in
+protein structure prediction, NGS analysis, and Python/R scripting.
+```
+Claude will run the setup checker, ask about your background, and generate your
+`user_profile.yaml` and `scripts/draft_all.py` interactively.
 
-Claude will run the setup checker, ask you questions about your background, and generate
-your configuration files interactively. To check what's already set up at any time:
+**Adapting to your field**
+```
+I'm targeting data science and ML engineering roles at tech companies, not biotech.
+Update companies.yaml with relevant companies and tune the keyword filters for my field.
+```
 
+**Day-to-day use**
+```
+I have new jobs from the Chrome extension. Import them, score them, and draft
+applications for anything scoring 7 or above.
+```
+```
+Draft an application for job ID 42. My target relocation city for this role is Seattle.
+```
+
+**Debugging**
+```
+My scores all seem too low — most roles I think are good fits are coming back as 5 or 6.
+Help me diagnose and improve the scoring profile.
+```
+
+To check what's set up at any time without Claude:
 ```bash
 python3 scripts/check_setup.py
 ```
