@@ -263,9 +263,11 @@ python3 scripts/score_auto.py
   than expected once the model reads the full description.
 - **Open the actual job page in its own tab**, not a search results page or side panel.
   The extension needs the individual posting page to extract the full description.
-- **LinkedIn**: click the job title to open it in a new tab (not the LinkedIn side panel).
-  The extension handles scrolling and expanding the description automatically — you just
-  need the page itself to be open in a tab before clicking the extension button.
+- **LinkedIn**: click the job title to open it in a new tab (not the LinkedIn side panel),
+  and **let the page finish loading before clicking the extension button**. LinkedIn loads
+  job descriptions dynamically — if the tab is still spinning when you click, the description
+  may not be captured yet. Wait until the job description is visibly on screen in each tab,
+  then click the extension.
 - If a job's description looks incomplete after importing, open the posting page again,
   let it load fully, then re-capture (the extension polls for up to 4 seconds, but very
   slow connections may need a manual reload first).
