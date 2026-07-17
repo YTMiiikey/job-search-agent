@@ -261,10 +261,14 @@ python3 scripts/score_auto.py
   might score higher than expected once the model reads the full description.
 - **Capture the full job page**, not a search results page. Navigate into the actual
   posting so the extension can read the complete description.
-- **LinkedIn tip**: open the job in a new tab (not the side panel) to get the full
-  description text.
-- The extension works on any page — if a job page looks weird, try scrolling all the
-  way down before clicking Save to ensure the full description has loaded.
+- **LinkedIn: always open the full post and wait for it to render before clicking Save.**
+  LinkedIn loads job descriptions asynchronously — if you click the extension too quickly,
+  it may capture an empty or partial description. The steps:
+  1. Click the job title to open it (in a new tab, not the side panel)
+  2. Wait for the full description to appear on screen — scroll down to confirm it has loaded
+  3. *Then* click the extension icon and Save
+- The extension works on any page — if a job page looks like it captured incomplete text,
+  reload the page, let it fully render, and capture again.
 
 ---
 
